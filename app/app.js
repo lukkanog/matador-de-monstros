@@ -77,29 +77,41 @@ new Vue({
             }
         },
 
-        playerLifeBarStyle () {
+        playerLifeBarStyle() {
             return `
                 width: ${this.player.hp}%;
                 backgroundColor: ${this.player.hp <= 30 ? "red" : "green"}
             `;
         },
 
-        monsterLifeBarStyle () {
+        monsterLifeBarStyle() {
             return `
                 width: ${this.monster.hp}%;
                 backgroundColor: ${this.monster.hp <= 30 ? "red" : "green"}
             `;
+        },
+
+        resultStyle() {
+            return `
+                color: ${this.monster.hp < this.player.hp ? "#3db85c" : "#a30404"}
+            `;
         }
     },
     watch: {
-        player () {
-            if (this.player.hp < 0)
+        player: {
+            deep: true,
+            handler() {
+                if (this.player.hp < 0)
                 this.player.hp = 0;
+            }
         },
 
-        monster () {
-            if (this.monster.hp < 0)
+        monster: {
+            deep: true,
+            handler() {
+                if (this.monster.hp < 0)
                 this.monster.hp = 0;
+            }
         }
     }
 })

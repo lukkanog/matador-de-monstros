@@ -95,6 +95,12 @@ ul, ol {
     background: #dfdfdf;
 }
 
+.result{
+    text-align: center;
+    font-weight: 700;
+}
+
+
 #game-log{
     width: 50%;
     margin: auto;

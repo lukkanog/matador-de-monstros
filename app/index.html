@@ -36,7 +36,7 @@
 
         <div id="gameControl" >
             <template v-if="result">
-                <h3>
+                <h3 class="result" :style="resultStyle">
                     {{ result }}
                 </h3>
             </template> 
@@ -58,13 +58,13 @@
         <template v-if="logs.length >= 1">
             <div id="game-log">
                 <ul class="logs">
-                    <li class="log" v-for="(log, i) in logs" key="i">
+                    <li class="log" v-for="(log, i) in logs">
                         {{ log }}
                     </li>
                 </ul>
             </div>
         </template>
-
+        
     </div>
 
 </head>
