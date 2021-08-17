@@ -57,8 +57,8 @@
         <template v-if="logs.length >= 1">
             <div id="game-log">
                 <ul class="logs">
-                    <li class="log" v-for="(log, i) in logs">
-                        {{ log }}
+                    <li class="log" :class="log.className" v-for="(log, i) in logs" >
+                        {{ log.message }}
                     </li>
                 </ul>
             </div>

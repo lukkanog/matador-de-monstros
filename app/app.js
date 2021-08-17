@@ -23,21 +23,21 @@ new Vue({
         playerAttack() {
             const damage = this.generateDamage(this.player.power);
             this.monster.hp -= damage;
-            this.log(`Jogador atingiu monstro com ${damage} de dano`);
+            this.log(`Jogador atingiu monstro com ${damage} de dano`, 'playerLog');
             this.monsterAttack();
         },
 
         playerSpecialAttack () {
             const damage = this.generateDamage(this.player.power * 2);
             this.monster.hp -= damage;
-            this.log(`Jogador atingiu monstro com ${damage} de dano`);
+            this.log(`Jogador atingiu monstro com ${damage} de dano`, 'playerLog');
             this.monsterAttack();
         },
 
         monsterAttack() {
             const damage = this.generateDamage(this.monster.power);
             this.player.hp -= damage;
-            this.log(`Monstro atingiu jogador com ${damage} de dano`);
+            this.log(`Monstro atingiu jogador com ${damage} de dano`, 'enemyLog');
         },
 
         healPlayer () {
@@ -45,7 +45,7 @@ new Vue({
 
             if (this.player.hp < 100) {   
                 this.player.hp += healingPoints;
-                this.log(`Jogador se curou com ${healingPoints} pontos de vida`);
+                this.log(`Jogador se curou com ${healingPoints} pontos de vida`, 'playerLog');
                 this.monsterAttack();
             }
         },
@@ -59,8 +59,8 @@ new Vue({
             return Math.round(finalDamage);
         },
 
-        log(message) {
-            this.logs.push(message);
+        log(message, className) {
+            this.logs.unshift({message: message, className: className});
         }
         
     },

@@ -122,11 +122,11 @@ ul, ol {
 
 }
 
-.log:nth-child(odd){
+.playerLog{
     background: #46f1aa;
 }
 
-.log:nth-child(even){
+.enemyLog {
     background: #750202;
     color: #fff;
 }
