@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>O Matador de Monstros</title>
+
+    <div id="app">
+        <header id="header">
+            <h1 id="gameTitle">O Matador de Monstros</h1>
+        </header>
+
+        <div id="gameStatus" class="container">
+
+            <div class="player">
+                <h2>Jogador</h2>
+                <div class="life-bar-wrapper">
+                    <div class="life-bar" :style="playerLifeBarStyle"></div>
+                </div>
+                <p>{{ player.hp }}%</p>
+            </div>
+
+            <div class="player">
+                <h2>Monstro</h2>
+                <div class="life-bar-wrapper">
+                    <div class="life-bar" :style="monsterLifeBarStyle"></div>
+                </div>
+                <p>{{ monster.hp }}%</p>
+            </div>
+        </div>
+
+        <div id="gameControl" >
+            <template v-if="result">
+                <h3>
+                    {{ result }}
+                </h3>
+            </template> 
+            <div id="buttons">
+                <template v-if="!gameIsOn">
+                    <button class="button start" @click="startGame">Novo Jogo</button>
+                </template>
+                
+                <template v-else>
+                    <button class="button attack" @click="playerAttack">Ataque</button>
+                    <button class="button special-attack" @click="playerSpecialAttack">Ataque especial</button>
+                    <button class="button heal" @click="healPlayer">Curar</button>
+                    <button class="button quit" @click="gameIsOn = false">Desistir</button>
+                </template>
+            </div>
+                
+        </div>
+
+        <template v-if="logs.length >= 1">
+            <div id="game-log">
+                <ul class="logs">
+                    <li class="log" v-for="(log, i) in logs" key="i">
+                        {{ log }}
+                    </li>
+                </ul>
+            </div>
+        </template>
+
+    </div>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

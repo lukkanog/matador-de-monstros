@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karantina', cursive;
+    font-weight: lighter;
+    font-size: 1.6rem;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+#app{
+    padding: 1rem;
+}
+
+.container{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 1rem 0;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 25px 0;
+    box-shadow: 5px 5px 10px #00000050;
+}
+
+#header{
+    padding: .5rem 0;
+    text-align: center;
+}
+
+#gameTitle{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.player{
+    width: 40%;
+    text-align: center;
+}
+
+.life-bar-wrapper{
+    margin: 10px 0;
+    width: 100%;
+    height: 20px;
+    border: 1px solid #000;
+}
+
+.life-bar{
+    width: 100%;
+    height: 100%;
+    transition: .2s ease-in-out;
+}
+
+#buttons{
+    width: 40%;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.button{
+    padding: 5px 10px;
+    transition: .2s;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.button:hover{
+    transform: scale(0.95);
+}
+
+.start{
+    background: #ff8ad2;
+}
+
+.attack{
+    background: #e6f87d;
+}
+
+.special-attack{
+    background: #ff8b56;
+}
+
+.heal{
+    background: #57ff65;
+}
+
+.quit{
+    background: #dfdfdf;
+}
+
+#game-log{
+    width: 50%;
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px 15px #00000050;
+}
+
+.logs{
+    transition: .4s;
+    width: 100%;
+}
+
+.log {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 0;
+    font-size: 1.2rem;
+    transition: .4s;
+
+}
+
+.log:nth-child(odd){
+    background: #46f1aa;
+}
+
+.log:nth-child(even){
+    background: #750202;
+    color: #fff;
+}
+
+
