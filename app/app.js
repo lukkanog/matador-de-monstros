@@ -56,7 +56,7 @@ new Vue({
             const damage = Math.floor(Math.random() * (max - min)) + min;
             const finalDamage = damage * power;
 
-            return finalDamage;
+            return Math.round(finalDamage);
         },
 
         log(message) {
